@@ -11,14 +11,28 @@ Email: shs96@drexel.edu
 # Prequisites
 - Using some form of Linux
 - Using NetworkManager to manage networks 
-- bash, curl
+- bash, nm-connection-editor
 
 # Quick Start
+Download the [cert](https://comodoca.file.force.com/sfc/dist/version/download/?oid=00D1N000002Ljih&ids=0683l00000ENwaHAAT&d=%2Fa%2F3l000000VZ4M%2Fie5Sho19m8SLjTZkH_VL8efOD1qyGFt9h5Ju1ddtbKQ&operationContext=DELIVERY&viewId=05H5c000000jDrXEAU&dpt=)
+
+Run this to download the script and run it 
+
 ```sh 
 curl -O https://raw.githubusercontent.com/ShahriyarShawon/dragonfly3_linux_autoconnect/master/dragonfly3_networkmanager_autoscript.sh
-sh dragonfly3_networkmanager_autoscript.sh
-# That's It
+bash dragonfly3_networkmanager_autoscript.sh
 ```
+
+Then open up connection editor `nm-connection-editor` or right click your 
+internet/wifi applet in your systray and click `Edit Connections`
+
+Select dragonfly3 and hit gear icon at the bottom to edit this profile 
+
+Navigate to wifi security, select `CA Certificate` and then point it to 
+the previously downloaded certificate. 
+
+Hit save and then use the same applet to now connect to dragonfly3.
+
 
 # Implementation Details
 
@@ -69,18 +83,6 @@ method=auto
 To connect to the dragonfly3 network you need to provide a certificate which is 
 hosted [here](https://comodoca.my.salesforce.com/sfc/p/1N000002Ljih/a/3l000000VZ4M/ie5Sho19m8SLjTZkH_VL8efOD1qyGFt9h5Ju1ddtbKQ) but the actual download link to the crt is 
 [here](https://comodoca.file.force.com/sfc/dist/version/download/?oid=00D1N000002Ljih&ids=0683l00000ENwaHAAT&d=%2Fa%2F3l000000VZ4M%2Fie5Sho19m8SLjTZkH_VL8efOD1qyGFt9h5Ju1ddtbKQ&operationContext=DELIVERY&viewId=05H5c000000jDrXEAU&dpt=)
-
-
-## Script Implementation
-This script uses `/home/{username}/config/dragonfly` to store the `dragonfly3.crt` 
-certificate. 
-
-The a high level explanation of the most important steps is 
-1. See if config directory exists, if not then create it 
-2. Download the cert and rename it to dragonfly3.crt
-3. Move it to the config directory 
-4. ask for drexel username and password 
-5. run nmcli command with all the provided inputs
 
 # Why I made this 
 I use Linux as my daily and only os. Drexel's says that it provide an auto script 
