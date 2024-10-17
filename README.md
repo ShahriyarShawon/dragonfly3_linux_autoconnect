@@ -1,8 +1,7 @@
 # Dragonfly 3 NetworkManager Linux Autoconnect 
 
 # Contact
-The goal of this is to be supported as long as I am enrolled in the university so 
-please let me know if you have any problems.
+The goal of this is to be supported as long as I am enrolled in the university and hopefully longer so please let me know if you have any problems.
 
 Discord: @shahriyarshawon 
 
@@ -14,6 +13,30 @@ Email: shs96@drexel.edu
 - bash, nm-connection-editor
 
 # Quick Start
+
+## Instructions as of October 17 2024:
+It's come to my attention that the download of ther cert is no longer required to have this script work.
+
+The new instructions are as follows.
+
+`The current instructions are modified from the old instructions and are taken from the official CCI Support Page located` [here](https://support.cci.drexel.edu/getting-connected/general-issues/connecting-dragonfly3-wifi-drexel-campus/connecting-to-dragonfly3-on-ubuntu-linux-with-a-script/)
+
+1. [Connect to Drexel Guest WiFi](https://support.cci.drexel.edu/getting-connected/general-issues/connecting-dragonfly3-wifi-drexel-campus/connecting-dragonfly3drexelguest/)
+2. Install `curl` and `net-tools`
+3. Download the script with `curl`
+```sh 
+curl -O https://raw.githubusercontent.com/ShahriyarShawon/dragonfly3_linux_autoconnect/master/dragonfly3_networkmanager_autoscript.sh
+```
+4. Enter the following command and enter your `abc123` and `password`
+```sh 
+sudo bash dragonfly3_networkmanager_autoscript.sh
+```
+5. Select dragonfly3 in your Wi-Fi settings, and it'll connect
+
+
+
+## Instructions Pre October 17 2024:
+
 Download the [cert](https://comodoca.file.force.com/sfc/dist/version/download/?oid=00D1N000002Ljih&ids=0683l00000ENwaHAAT&d=%2Fa%2F3l000000VZ4M%2Fie5Sho19m8SLjTZkH_VL8efOD1qyGFt9h5Ju1ddtbKQ&operationContext=DELIVERY&viewId=05H5c000000jDrXEAU&dpt=)
 
 Run this to download the script and run it 
