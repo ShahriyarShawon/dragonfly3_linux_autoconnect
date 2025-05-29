@@ -2,7 +2,7 @@
 
 USERNAME=""
 PASSWORD=""
-INTERFACE=$(route | grep "^default" | awk '{print $8}')
+INTERFACE=$(ip route | grep "^default" | awk '{print $5}')
 
 echo "Using interface $INTERFACE"
 read -p "Enter Drexel Username " USERNAME
